@@ -29,14 +29,14 @@ func main(){
 					help()
 				}
 			case "update":
-				if len(os.Args) == 2{
+				if len(os.Args) == 9{
 					s := structs.Struct{os.Args[2], Colleague{os.Args[3], os.Args[4], os.Args[5], os.Args[6], os.Args[7], os.Args[8]}}
 					s.Update([]int{17,19,21,23,25,27,29,31,47,49,51,53,55,57,59,61,62,63})
 				} else {
 					help()
 				}
 			case "remove":
-				if len(os.Args) == 2{
+				if len(os.Args) == 4{
 					s := structs.Struct{os.Args[2], Colleague{os.Args[3], "", "", "", "", ""}}
 					s.Remove([]int{1})
 				} else {
@@ -62,5 +62,5 @@ func (c Colleague) Interface(){
 }
 
 func help(){
-	fmt.Printf("Help!")
+	fmt.Println("Help!")
 }
